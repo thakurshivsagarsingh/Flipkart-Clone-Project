@@ -1,0 +1,615 @@
+/* Core Configurations */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+body {
+    background-color: #f1f3f6;
+    overflow-x: hidden;
+}
+
+/* Navbar Layout */
+.navbar {
+    background-color: #2874f0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 56px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1248px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.logo-brand {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 24px;
+}
+
+.logo {
+    width: 75px;
+    object-fit: contain;
+}
+
+.explore-plus {
+    font-size: 11px;
+    font-style: italic;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 2px;
+}
+
+.plus-color {
+    color: #ffe500;
+    font-weight: 500;
+}
+
+/* Search Architecture */
+.search-container {
+    flex-grow: 1;
+    max-width: 564px;
+    background: #fff;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.23);
+}
+
+.search-container input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    font-size: 14px;
+    border-radius: 2px 0 0 2px;
+}
+
+.search-container button {
+    border: none;
+    background: white;
+    padding: 0 16px;
+    color: #2874f0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Action items Group */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 30px;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.nav-item {
+    cursor: pointer;
+}
+
+.choice-icon {
+    font-size: 10px;
+    margin-left: 4px;
+}
+
+.login-btn {
+    background-color: #fff;
+    color: #2874f0;
+    border: 1px solid #dbdbdb;
+    padding: 5px 40px;
+    border-radius: 2px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.nav-icon-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    position: relative;
+}
+
+.badge {
+    background-color: #ff4d4d;
+    color: white;
+    font-size: 11px;
+    border-radius: 50%;
+    padding: 2px 6px;
+    position: absolute;
+    top: -10px;
+    left: 12px;
+}
+
+/* Sub Category Bar */
+.categories-bar {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 12px 16px;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.16);
+    overflow-x: auto;
+}
+
+.cat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.cat-item img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 4px;
+}
+
+.cat-item span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Grid Layouts and Banners */
+.main-container {
+    max-width: 1248px;
+    margin: 16px auto;
+    padding: 0 8px;
+}
+
+.promo-banner img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    background: white;
+    padding: 16px;
+    margin-top: 16px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.section-title h2 {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 12px;
+    background: white;
+    padding: 16px;
+}
+
+/* Individual Product Cards */
+.product-card {
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: #fff;
+}
+
+.product-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.wishlist-heart-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #c2c2c2;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.wishlist-heart-btn.active {
+    color: #ff4d4d;
+}
+
+.product-image-wrapper {
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.product-image-wrapper img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.product-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #212121;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 6px;
+}
+
+.product-rating {
+    background: #388e3c;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+    width: fit-content;
+    margin-bottom: 8px;
+}
+
+.price-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.current-price {
+    font-size: 16px;
+    font-weight: 500;
+    color: #212121;
+}
+
+.old-price {
+    font-size: 14px;
+    color: #878787;
+    text-decoration: line-through;
+}
+
+.discount-tag {
+    font-size: 13px;
+    color: #388e3c;
+    font-weight: 500;
+}
+
+.add-cart-btn {
+    background: #ff9f00;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 8px 0;
+    border-radius: 2px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+.add-cart-btn:hover {
+    background: #f39500;
+}
+
+/* Side Drawers Setup */
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.3s ease;
+}
+
+.side-panel.open {
+    right: 0;
+}
+
+.panel-header {
+    padding: 16px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2874f0;
+    color: white;
+}
+
+.close-panel-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+.panel-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+.panel-footer {
+    padding: 16px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.total-price-box {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: right;
+}
+
+.checkout-btn {
+    background: #fb641b;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+/* Modular Elements Inside Drawers */
+.drawer-item {
+    display: flex;
+    gap: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    align-items: center;
+}
+
+.drawer-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.drawer-item-details {
+    flex-grow: 1;
+}
+
+.drawer-item-title {
+    font-size: 14px;
+    font-weight: 500;
+    max-width: 220px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.remove-item-link {
+    color: #ff4d4d;
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: 4px;
+    display: inline-block;
+}
+
+/* Login Modal Elements */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 150;
+    display: none;
+}
+
+.overlay.open {
+    display: block;
+}
+
+.login-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 650px;
+    height: 450px;
+    background: white;
+    z-index: 250;
+    display: none;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.login-modal.open {
+    display: flex;
+}
+
+.login-left {
+    background: #2874f0;
+    width: 40%;
+    padding: 40px 32px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-left p {
+    color: #dbdbdb;
+    margin-top: 16px;
+    line-height: 1.5;
+}
+
+.login-right {
+    width: 60%;
+    padding: 56px 40px 16px;
+    position: relative;
+}
+
+.close-modal-btn {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #878787;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 8px 0;
+    outline: none;
+    font-size: 16px;
+}
+
+.input-group input:focus {
+    border-bottom-color: #2874f0;
+}
+
+.terms-text {
+    font-size: 12px;
+    color: #878787;
+    margin-bottom: 20px;
+}
+
+.form-submit-btn {
+    background: #fb641b;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.form-footer-text {
+    text-align: center;
+    margin-top: auto;
+    font-size: 14px;
+    color: #2874f0;
+    padding-top: 60px;
+}
+
+.form-footer-text a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Footer UI */
+.footer {
+    background-color: #172337;
+    color: white;
+    margin-top: 40px;
+}
+
+.footer-links {
+    max-width: 1248px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px 16px;
+    gap: 40px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-col.border-left {
+    border-left: 1px solid #454d5e;
+    padding-left: 24px;
+}
+
+.footer-col h4 {
+    color: #878787;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.footer-col a, .footer-col p {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.footer-col a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    border-top: 1px solid #454d5e;
+    max-width: 1248px;
+    margin: 0 auto;
+    padding: 24px 16px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer-bottom span i {
+    color: #ffe500;
+    margin-right: 6px;
+}
+
+/* Adjustments for Mobile Responsiveness */
+@media(max-width: 768px) {
+    .nav-actions .nav-item, .nav-actions span:not(.badge) {
+        display: none;
+    }
+    .login-modal {
+        width: 90%;
+        flex-direction: column;
+        height: auto;
+    }
+    .login-left {
+        width: 100%;
+        padding: 20px;
+    }
+    .login-right {
+        width: 100%;
+        padding: 20px;
+    }
+    .side-panel {
+        width: 100%;
+        right: -100%;
+    }
+}
